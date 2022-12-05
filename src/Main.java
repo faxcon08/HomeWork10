@@ -94,8 +94,20 @@ public class Main {
                 System.out.println(resultString);
             }
         }
-        System.out.println("Результирующая строка: "+resultString);
+        System.out.println("Данные строки - "+resultString);
 
         System.out.println(ANSI_RED + "1.8 Eighth Task" + ANSI_RESET);
+
+        stringOne = "aabccddefgghiijjkk";
+        resultString = new StringBuilder("");
+        for (int i = 0; i < stringOne.length() - 1; ) {
+            if(stringOne.charAt(i)==stringOne.charAt(i+1)) {
+               resultString.append(stringOne.charAt(i));
+               i=i+2;
+            }
+            else i++;
+        }
+        System.out.println("Данные строки - "+resultString);
+
     }//main$$
 }//Main

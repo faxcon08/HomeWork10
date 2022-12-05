@@ -32,9 +32,13 @@ public class Main {
 
         System.out.println(ANSI_RED+"1.2 Second Task"+ANSI_RESET);
 
-        System.out.println("Данные ФИО сотрудника для заполениея отчета - "+fullName.toUpperCase());
+        fullName=fullName.toUpperCase();
+        System.out.println("Данные ФИО сотрудника для заполениея отчета - "+fullName);
 
         System.out.println(ANSI_RED+"1.3 Third Task"+ANSI_RESET);
+        fullName="Иванов Семён Семенович";
+        fullName=fullName.replace('ё','e').replace('Ё','Е');
+        System.out.println("Данные ФИО сотрудника - "+fullName);
 
     }//main
 }//Main

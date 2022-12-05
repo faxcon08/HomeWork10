@@ -43,15 +43,18 @@ public class Main {
         System.out.println(ANSI_RED+"1.5 Fifth Task"+ANSI_RESET);
         fullName = " Ivanov    Ivan  Ivanovich   ";
         fullName=fullName.trim().replaceAll("\\s+"," ");
-        if(fullName.split(" ").length!=3)
+        if(fullName.split(" ").length!=3) {
             throw new RuntimeException("Неверный ввод ФИО");
+        }
         int firstWhiteSpace = fullName.indexOf(' ');
-        if(firstWhiteSpace==-1)
+        if(firstWhiteSpace==-1) {
             throw new RuntimeException("ошибкв в ФИО");
+        }
         firstName=fullName.substring(0,firstWhiteSpace);
         int lastWhiteSpace=fullName.lastIndexOf(' ');
-        if(lastWhiteSpace==-1)
+        if(lastWhiteSpace==-1) {
             throw new RuntimeException("ошибкв в ФИО");
+        }
         middleName=fullName.substring(firstWhiteSpace+1,lastWhiteSpace);
         lastName=fullName.substring(lastWhiteSpace+1,fullName.length()-1);
 
@@ -59,5 +62,18 @@ public class Main {
         System.out.println("Фамилия сотрудника - " + middleName);
         System.out.println("Отчество сотрудника - " + lastName);
 
-    }//main
+        System.out.println(ANSI_RED + "1.6 Sixth Task" + ANSI_RESET);
+        fullName="  ivanov   ivan    ivanovich ".trim().replaceAll("\\s+"," ");
+        String[] names = fullName.split(" ");
+        if(names.length!=3)
+            throw new RuntimeException("Неверный ФИО");
+        firstName=names[0].substring(0,1).toUpperCase()+names[0].substring(1,names[0].length()-1);
+        middleName=names[1].substring(0,1).toUpperCase()+names[1].substring(1,names[1].length()-1);
+        lastName=names[2].substring(0,1).toUpperCase()+names[2].substring(1,names[2].length()-1);
+
+        fullName=firstName+" "+middleName+" "+lastName;
+        System.out.println(fullName);
+
+
+    }//main$$
 }//Main

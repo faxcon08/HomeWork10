@@ -40,5 +40,24 @@ public class Main {
         fullName=fullName.replace('ё','e').replace('Ё','Е');
         System.out.println("Данные ФИО сотрудника - "+fullName);
 
+        System.out.println(ANSI_RED+"1.5 Fifth Task"+ANSI_RESET);
+        fullName = " Ivanov    Ivan  Ivanovich   ";
+        fullName=fullName.trim().replaceAll("\\s+"," ");
+        if(fullName.split(" ").length!=3)
+            throw new RuntimeException("Неверный ввод ФИО");
+        int firstWhiteSpace = fullName.indexOf(' ');
+        if(firstWhiteSpace==-1)
+            throw new RuntimeException("ошибкв в ФИО");
+        firstName=fullName.substring(0,firstWhiteSpace);
+        int lastWhiteSpace=fullName.lastIndexOf(' ');
+        if(lastWhiteSpace==-1)
+            throw new RuntimeException("ошибкв в ФИО");
+        middleName=fullName.substring(firstWhiteSpace+1,lastWhiteSpace);
+        lastName=fullName.substring(lastWhiteSpace+1,fullName.length()-1);
+
+        System.out.println("Имя сотрудника - " + firstName);
+        System.out.println("Фамилия сотрудника - " + middleName);
+        System.out.println("Отчество сотрудника - " + lastName);
+
     }//main
 }//Main
